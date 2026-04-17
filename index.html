@@ -5,50 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="An E- commerce website called Bemilwis Boutique and Shoes, which sells shoes both locally in  Kisii(Daraja Mbili), Kenya and internationally.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bw-shared.css">
   <link rel="shortcut icon" href="fav.png" type="image/png">
   <title>Bemilwis Boutique</title>
 </head>
 <body>
 
-<!-- sidebar -->
-  <div class="sidebar" id="sidebar">
 
-    <!-- sidebar navigation -->
-    <nav>
+<!-- Sidebar overlay -->
+<div class="bw-sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<aside class="bw-sidebar" id="sidebar">
+  <button class="bw-sidebar-close" onclick="closeSidebar()">✕</button>
+  <nav class="bw-sidebar-nav">
+    <a href="index.html" onclick="closeSidebar()">Home</a>
+    <a href="shop.html" onclick="closeSidebar()">Our Shop</a>
+    <a href="contact.html" onclick="closeSidebar()">Contact Us</a>
+  </nav>
+  <div class="bw-sidebar-footer">
+    <button class="bw-btn-primary auth-trigger">Sign In</button>
+  </div>
+</aside>
+
+<!-- HEADER -->
+<header id="bwHeader">
+  <div class="bw-header-inner">
+    <a href="index.html" class="bw-logo"><img src="logo.png" alt="Bemilwis Boutique"></a>
+    <nav class="bw-nav">
       <a href="index.html">Home</a>
-      <a href="shop.html"><span>Our</span> Shop</a>
+      <a href="shop.html" class="active">Our Shop</a>
       <a href="contact.html">Contact Us</a>
     </nav>
-
-    <!-- sign in button -->
-    <button class="signIn">Sign In</button>
+    <div class="bw-header-actions">
+      <button class="bw-cart-btn" onclick="setCartVisible(true)">🛍️ <span class="cart-count">0</span></button>
+      <button class="bw-btn-outline auth-trigger">Sign In</button>
+    </div>
+    <button class="bw-hamburger" onclick="sidebarToggle()"><span></span><span></span><span></span></button>
   </div>
-
+</header>
 <!-- hero section -->
   <section class="hero">
-<!-- MAIN HEADER -->
-  <header>
 
-<!-- menu button -->
-    <div class="menuBtn" onclick="sidebarToggle()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- navigation -->
-     <div class="mainNavs">
-      <a href="index.html">Home</a>
-      <a href="shop.html"><span>Our</span> Shop</a>
-      <a href="contact.html">Contact Us</a>
-     </div>
-
-     <!-- sign in button -->
-     <button class="signIn">Sign In</button>
-
-
-  </header>
-<!-- END OF HEADER -->
 
 <!-- LOGO IMAGE -->
     <a href="" class="logo">
