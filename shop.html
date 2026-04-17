@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the latest heels, flats, boots and accessories at Bemilwis Boutique. Quality footwear — delivered with style.">
+  <link rel="stylesheet" href="bw-shared.css">
+  <link rel="shortcut icon" href="fav.png" type="image/png">
+  <title>Shop — Bemilwis Boutique</title>
+
+</head>
+<body>
+
+<!-- Sidebar overlay -->
+<div class="bw-sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<aside class="bw-sidebar" id="sidebar">
+  <button class="bw-sidebar-close" onclick="closeSidebar()">✕</button>
+  <nav class="bw-sidebar-nav">
+    <a href="index.html" onclick="closeSidebar()">Home</a>
+    <a href="shop.html" onclick="closeSidebar()">Our Shop</a>
+    <a href="contact.html" onclick="closeSidebar()">Contact Us</a>
+  </nav>
+  <div class="bw-sidebar-footer">
+    <button class="bw-btn-primary auth-trigger">Sign In</button>
+  </div>
+</aside>
+
+<!-- HEADER -->
+<header id="bwHeader">
+  <div class="bw-header-inner">
+    <a href="index.html" class="bw-logo"><img src="logo.png" alt="Bemilwis Boutique"></a>
+    <nav class="bw-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Our Shop</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="bw-header-actions">
+      <button class="bw-cart-btn" onclick="setCartVisible(true)">🛍️ <span class="cart-count">0</span></button>
+      <button class="bw-btn-outline auth-trigger">Sign In</button>
+    </div>
+    <button class="bw-hamburger" onclick="sidebarToggle()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- SHOP HERO -->
+<section class="shop-hero">
+  <div class="shop-hero-text">
+    <h1>The Boutique<br><em style="color: var(--gold); font-style: italic;">Collection</em></h1>
+    <p>Curated footwear and fashion for women who walk with purpose.</p>
+  </div>
+</section>
+
+<!-- SHOP -->
+<main class="bw-shop">
+  <div class="bw-search-bar">
+    <input type="text" id="bwSearch" placeholder="Search shoes, bags, accessories...">
+    <button class="bw-cart-trigger" onclick="setCartVisible(true)">🛍️ View Cart <span class="cart-count">0</span></button>
+  </div>
+
+  <div class="bw-categories">
+
+    <!-- HEELS -->
+    <div class="bw-category-block reveal">
+      <h2>Heels</h2>
+      <div class="bw-products-row" id="heels-row">
+        <div class="bw-product-card" data-name="Open Chunky Blocks">
+          <div class="card-img"><img src="blockFront.png" alt="Open Chunky Blocks"></div>
+          <div class="card-body">
+            <p class="card-name">Open Chunky Blocks</p>
+            <p class="card-price">Kes. 2,705</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'h1',name:'Open Chunky Blocks',price:2705,img:'blockFront.png',desc:'Bold chunky block heels. Perfect for office or evening events.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#8B4513',name:'Brown'},{hex:'#000',name:'Black'},{hex:'#C0C0C0',name:'Silver'}]})">View Details</button>
+              <button class="card-add-btn" onclick="event.stopPropagation();openShoeDashboard({id:'h1',name:'Open Chunky Blocks',price:2705,img:'blockFront.png',desc:'Bold chunky block heels.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#8B4513',name:'Brown'},{hex:'#000',name:'Black'},{hex:'#C0C0C0',name:'Silver'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Closed Chunky Blocks">
+          <div class="card-img"><img src="closedFront.png" alt="Closed Chunky Blocks"></div>
+          <div class="card-body">
+            <p class="card-name">Closed Chunky Blocks</p>
+            <p class="card-price">Kes. 2,499</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'h2',name:'Closed Chunky Blocks',price:2499,img:'closedFront.png',desc:'Sleek closed-toe chunky block heels. Sophisticated and stable.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#C0A020',name:'Gold'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'h2',name:'Closed Chunky Blocks',price:2499,img:'closedFront.png',desc:'Sleek closed-toe chunky block heels.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#C0A020',name:'Gold'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Lady Loafers">
+          <div class="card-img"><img src="loaferFront.png" alt="Lady Loafers"></div>
+          <div class="card-body">
+            <p class="card-name">Lady Loafers</p>
+            <p class="card-price">Kes. 1,995</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'h3',name:'Lady Loafers',price:1995,img:'loaferFront.png',desc:'Classic lady loafers. Timeless, comfortable and versatile.',sizes:['36','37','38','39','40'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#C0C0C0',name:'Silver'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'h3',name:'Lady Loafers',price:1995,img:'loaferFront.png',desc:'Classic lady loafers.',sizes:['36','37','38','39','40'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#C0C0C0',name:'Silver'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Unisex Clogs">
+          <div class="card-img"><img src="clogsFront.png" alt="Unisex Clogs"></div>
+          <div class="card-body">
+            <p class="card-name">Unisex Clogs</p>
+            <p class="card-price">Kes. 2,195</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'h4',name:'Unisex Clogs',price:2195,img:'clogsFront.png',desc:'Comfortable and stylish unisex clogs. Suits every casual look.',sizes:['36','37','38','39','40','41','42','43'],colors:[{hex:'#f5f5dc',name:'Beige'},{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'h4',name:'Unisex Clogs',price:2195,img:'clogsFront.png',desc:'Comfortable unisex clogs.',sizes:['36','37','38','39','40','41','42','43'],colors:[{hex:'#f5f5dc',name:'Beige'},{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bw-row-nav">
+        <button class="bw-row-btn" onclick="bwScrollRow('heels-row',-1)">‹</button>
+        <button class="bw-row-btn" onclick="bwScrollRow('heels-row',1)">›</button>
+      </div>
+    </div>
+
+    <!-- FLATS & SLIDES -->
+    <div class="bw-category-block reveal">
+      <h2>Flats & Slides</h2>
+      <div class="bw-products-row" id="flats-row">
+        <div class="bw-product-card" data-name="Slide Sandals">
+          <div class="card-img"><img src="openFlatsFront.png" alt="Slide Sandals"></div>
+          <div class="card-body">
+            <p class="card-name">Slide Sandals</p>
+            <p class="card-price">Kes. 1,099</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'f1',name:'Slide Sandals',price:1099,img:'openFlatsFront.png',desc:'Lightweight and stylish slide sandals for everyday wear.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#C0A020',name:'Gold'},{hex:'#ff69b4',name:'Pink'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'f1',name:'Slide Sandals',price:1099,img:'openFlatsFront.png',desc:'Lightweight slide sandals.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#C0A020',name:'Gold'},{hex:'#ff69b4',name:'Pink'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Closed Flats">
+          <div class="card-img"><img src="closedFlatsFront.png" alt="Closed Flats"></div>
+          <div class="card-body">
+            <p class="card-name">Closed Flats</p>
+            <p class="card-price">Kes. 1,800</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'f2',name:'Closed Flats',price:1800,img:'closedFlatsFront.png',desc:'Smart closed-toe flats. Office-ready and all-day comfortable.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#f5f5dc',name:'Beige'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'f2',name:'Closed Flats',price:1800,img:'closedFlatsFront.png',desc:'Smart closed-toe flats.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#f5f5dc',name:'Beige'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Ladies Sneakers">
+          <div class="card-img"><img src="ladySneakerFront.png" alt="Ladies Sneakers"></div>
+          <div class="card-body">
+            <p class="card-name">Ladies Sneakers</p>
+            <p class="card-price">Kes. 2,450</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'f3',name:'Ladies Sneakers',price:2450,img:'ladySneakerFront.png',desc:'Trendy ladies sneakers. Sporty meets stylish.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#ff69b4',name:'Pink'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'f3',name:'Ladies Sneakers',price:2450,img:'ladySneakerFront.png',desc:'Trendy ladies sneakers.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#ff69b4',name:'Pink'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bw-row-nav">
+        <button class="bw-row-btn" onclick="bwScrollRow('flats-row',-1)">‹</button>
+        <button class="bw-row-btn" onclick="bwScrollRow('flats-row',1)">›</button>
+      </div>
+    </div>
+
+    <!-- BOOTS -->
+    <div class="bw-category-block reveal">
+      <h2>Boots</h2>
+      <div class="bw-products-row" id="boots-row">
+        <div class="bw-product-card" data-name="Girls Combat Boots">
+          <div class="card-img"><img src="bootsFront.png" alt="Combat Boots"></div>
+          <div class="card-body">
+            <p class="card-name">Girls Combat Boots</p>
+            <p class="card-price">Kes. 3,099</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'b1',name:'Girls Combat Boots',price:3099,img:'bootsFront.png',desc:'Edgy and durable combat boots. Built to last and designed to impress.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#556b2f',name:'Olive'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'b1',name:'Girls Combat Boots',price:3099,img:'bootsFront.png',desc:'Edgy combat boots.',sizes:['36','37','38','39','40','41'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#556b2f',name:'Olive'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="Boots 4 Men">
+          <div class="card-img"><img src="menFront.png" alt="Men Boots"></div>
+          <div class="card-body">
+            <p class="card-name">Boots 4 Men</p>
+            <p class="card-price">Kes. 3,899</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'b2',name:'Boots 4 Men',price:3899,img:'menFront.png',desc:'Premium men\'s boots. Rugged, stylish and built for every terrain.',sizes:['40','41','42','43','44','45'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#556b2f',name:'Olive'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'b2',name:'Boots 4 Men',price:3899,img:'menFront.png',desc:'Premium men boots.',sizes:['40','41','42','43','44','45'],colors:[{hex:'#000',name:'Black'},{hex:'#8B4513',name:'Brown'},{hex:'#556b2f',name:'Olive'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="bw-product-card" data-name="For Men Sneakers">
+          <div class="card-img"><img src="forMenFront.png" alt="Men Sneakers"></div>
+          <div class="card-body">
+            <p class="card-name">For Men Sneakers</p>
+            <p class="card-price">Kes. 1,899</p>
+            <div class="card-actions">
+              <button class="card-view-btn" onclick="openShoeDashboard({id:'b3',name:'For Men Sneakers',price:1899,img:'forMenFront.png',desc:'Fresh men\'s sneakers. Comfortable, clean, and casual-cool.',sizes:['40','41','42','43','44','45'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#808080',name:'Grey'}]})">View Details</button>
+              <button class="card-add-btn" onclick="openShoeDashboard({id:'b3',name:'For Men Sneakers',price:1899,img:'forMenFront.png',desc:'Fresh men sneakers.',sizes:['40','41','42','43','44','45'],colors:[{hex:'#fff',name:'White'},{hex:'#000',name:'Black'},{hex:'#808080',name:'Grey'}]})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bw-row-nav">
+        <button class="bw-row-btn" onclick="bwScrollRow('boots-row',-1)">‹</button>
+        <button class="bw-row-btn" onclick="bwScrollRow('boots-row',1)">›</button>
+      </div>
+    </div>
+
+  </div><!-- /bw-categories -->
+</main>
+
+<!-- CART PANEL -->
+<div class="bw-cart-overlay" id="bwCart">
+  <div class="bw-cart-panel">
+    <div class="bw-cart-header">
+      <h3>Your Bag 🛍️</h3>
+      <button onclick="setCartVisible(false)">✕</button>
+    </div>
+    <div class="bw-cart-body" id="bwCartItems"></div>
+    <div class="bw-cart-footer">
+      <div class="bw-cart-total">
+        <span>Total</span>
+        <strong id="bwCartTotal">Kes. 0</strong>
+      </div>
+      <button class="bw-whatsapp-btn" onclick="checkoutWhatsApp()">
+        <svg viewBox="0 0 24 24" width="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.057.522 4 1.453 5.699L.04 23.156a1 1 0 001.22 1.22l5.457-1.413A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.74-.511-5.302-1.402l-.38-.224-3.941 1.02 1.02-3.941-.224-.38A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- SHOE DASHBOARD MODAL -->
+<div class="sd-overlay" id="shoeDashboard">
+  <div class="sd-panel">
+    <button class="sd-close" onclick="document.getElementById('shoeDashboard').classList.remove('open')">✕</button>
+    <div class="sd-image-col">
+      <img id="sd-img" src="" alt="Product">
+    </div>
+    <div class="sd-info-col">
+      <span class="sd-tag">Bemilwis Boutique</span>
+      <h2 class="sd-name" id="sd-name"></h2>
+      <p class="sd-price" id="sd-price"></p>
+      <p class="sd-desc" id="sd-desc"></p>
+
+      <div class="sd-section" id="sd-colors-section">
+        <label class="sd-label">Select Colour</label>
+        <div class="sd-colors" id="sd-colors"></div>
+      </div>
+
+      <div class="sd-section" id="sd-sizes-section">
+        <label class="sd-label">Select Size (EU)</label>
+        <div class="sd-sizes" id="sd-sizes"></div>
+      </div>
+
+      <div class="sd-section">
+        <label class="sd-label">Quantity</label>
+        <div class="sd-qty-row">
+          <button onclick="document.getElementById('sd-qty').value=Math.max(1,+document.getElementById('sd-qty').value-1)">−</button>
+          <input type="number" id="sd-qty" value="1" min="1">
+          <button onclick="document.getElementById('sd-qty').value=+document.getElementById('sd-qty').value+1">+</button>
+        </div>
+      </div>
+
+      <button class="sd-add-btn" id="sd-add">Add to Bag 🛍️</button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="bw-auth-overlay" id="bwAuthModal">
+  <div class="bw-auth-modal">
+    <div class="bw-auth-header">
+      <h2>Bemilwis Boutique</h2>
+      <div class="bw-auth-tabs">
+        <button class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')">Register</button>
+      </div>
+      <button class="bw-auth-close" onclick="closeAuthModal()">✕</button>
+    </div>
+    <div class="auth-tab-panel active" data-tab="login">
+      <form class="bw-auth-form" id="bwLoginForm">
+        <div class="bw-auth-field"><label>Email</label><input name="email" type="email" placeholder="your@email.com" required></div>
+        <div class="bw-auth-field"><label>Password</label><input name="password" type="password" placeholder="Your password" required></div>
+        <button type="submit" class="bw-auth-submit">Sign In</button>
+        <p class="bw-auth-switch">No account? <span onclick="switchAuthTab('register')">Register here</span></p>
+      </form>
+    </div>
+    <div class="auth-tab-panel" data-tab="register">
+      <form class="bw-auth-form" id="bwRegisterForm">
+        <div class="bw-auth-field"><label>Full Name</label><input name="name" type="text" placeholder="Your name" required></div>
+        <div class="bw-auth-field"><label>Email</label><input name="email" type="email" placeholder="your@email.com" required></div>
+        <div class="bw-auth-field"><label>Password</label><input name="password" type="password" placeholder="Choose a password" required></div>
+        <button type="submit" class="bw-auth-submit">Create Account</button>
+        <p class="bw-auth-switch">Have an account? <span onclick="switchAuthTab('login')">Sign in</span></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOMER DASHBOARD -->
+<div class="bw-dash-overlay" id="bwDashboard">
+  <div class="bw-dash-panel">
+    <button class="bw-dash-close" onclick="closeDashboard()">✕</button>
+    <div class="bw-dash-header">
+      <div class="bw-dash-avatar">👤</div>
+      <h2 id="bw-dash-name"></h2>
+      <p id="bw-dash-email"></p>
+    </div>
+    <div class="bw-dash-body">
+      <div class="bw-dash-section">
+        <h4>Account Details</h4>
+        <div class="bw-dash-row"><span>Member Since</span><span id="bw-dash-joined"></span></div>
+      </div>
+      <div class="bw-dash-section">
+        <h4>My Orders</h4>
+        <div id="bw-dash-orders"></div>
+      </div>
+      <button class="bw-dash-logout" onclick="Auth.logout(); closeDashboard(); showToast('Signed out.','info');">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bw-footer">
+  <div class="bw-footer-inner">
+    <div class="bw-footer-brand">
+      <h2>Bemilwis<br><em>Boutique</em></h2>
+      <p>Fashion for women who walk with confidence. Kisii, Kenya.</p>
+      <div class="bw-socials">
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="video.png" alt="TikTok"></a>
+      </div>
+    </div>
+    <div class="bw-footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Our Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="bw-newsletter">
+      <h4>Stay Stylish</h4>
+      <p>Subscribe for new arrivals and exclusive offers.</p>
+      <form class="bw-newsletter-form" onsubmit="event.preventDefault();showToast('Subscribed!','success')">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+  <div class="bw-footer-bottom">
+    <span>© 2026 Bemilwis Boutique & Shoes. All rights reserved.</span>
+    <span><em>Developed by <a href="https://casualcodestudios.vercel.app" style="color:var(--gold)">Casual Code Studios</a></em></span>
+  </div>
+</footer>
+
+<a href="#" class="bw-scroll-top" id="scrollToTop">↑</a>
+
+<script src="bw-app.js"></script>
+<script>
+  function bwScrollRow(id, dir) {
+    const el = document.getElementById(id);
+    if (el) el.scrollBy({ left: dir * 280, behavior: 'smooth' });
+  }
+
+  // Search
+  document.getElementById('bwSearch')?.addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.bw-product-card').forEach(c => {
+      c.style.display = (c.dataset.name || '').toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
