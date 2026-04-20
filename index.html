@@ -3,474 +3,1266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An E- commerce website called Bemilwis Boutique and Shoes, which sells shoes both locally in  Kisii(Daraja Mbili), Kenya and internationally.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="bw-shared.css">
+  <meta name="description" content="Bemilwis Boutique & Shoes — Premium heels, boots, flats, and bags. Delivered with style from Kisii, Kenya to the world. Shop now and walk with confidence.">
+  <meta name="keywords" content="shoes Kenya, heels Kisii, boutique shoes, ladies shoes, men boots, Bemilwis">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Bemilwis Boutique & Shoes">
+  <meta property="og:description" content="Walk with confidence. Premium footwear and fashion, curated for the bold.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="bw-main.css">
   <link rel="shortcut icon" href="fav.png" type="image/png">
-  <title>Bemilwis Boutique</title>
+  <title>Bemilwis Boutique & Shoes — Walk With Confidence</title>
 </head>
-<body>
+<body class="page-fade">
 
+<!-- ═══════════════════════════════════════════
+     SCROLL TO TOP
+═══════════════════════════════════════════ -->
+<button class="bw-scroll-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
 
-<!-- Sidebar overlay -->
+<!-- ═══════════════════════════════════════════
+     SIDEBAR OVERLAY
+═══════════════════════════════════════════ -->
 <div class="bw-sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-<!-- Sidebar -->
-<aside class="bw-sidebar" id="sidebar">
-  <button class="bw-sidebar-close" onclick="closeSidebar()">✕</button>
+<!-- ═══════════════════════════════════════════
+     SIDEBAR
+═══════════════════════════════════════════ -->
+<aside class="bw-sidebar" id="sidebar" aria-label="Mobile navigation">
+  <button class="bw-sidebar-close" onclick="closeSidebar()" aria-label="Close menu">✕</button>
   <nav class="bw-sidebar-nav">
     <a href="index.html" onclick="closeSidebar()">Home</a>
     <a href="shop.html" onclick="closeSidebar()">Our Shop</a>
-    <a href="contact.html" onclick="closeSidebar()">Contact Us</a>
+    <a href="#about" onclick="closeSidebar(); smoothTo('about')">About</a>
+    <a href="contact.html" onclick="closeSidebar()">Contact</a>
   </nav>
   <div class="bw-sidebar-footer">
-    <button class="bw-btn-primary auth-trigger">Sign In</button>
+    <button class="bw-btn-primary auth-trigger" style="width:100%">Sign In</button>
   </div>
 </aside>
 
-<!-- HEADER -->
-<header id="bwHeader">
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header id="bwHeader" role="banner">
   <div class="bw-header-inner">
-    <a href="index.html" class="bw-logo"><img src="logo.png" alt="Bemilwis Boutique"></a>
-    <nav class="bw-nav">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Our Shop</a>
-      <a href="contact.html">Contact Us</a>
+    <a href="index.html" class="bw-logo"><img src="logo.png" alt="Bemilwis Boutique" width="120" height="46"></a>
+    <nav class="bw-nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Our Shop</a>
+      <a href="#about">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="bw-header-actions">
+      <button class="bw-cart-btn" onclick="setCartVisible(true)" aria-label="Open cart">
+        <img style="width: 24px;" src="online-shopping.png" alt="cart"> <span class="cart-count">0</span>
+      </button>
       <button class="bw-btn-outline auth-trigger">Sign In</button>
     </div>
-    <button class="bw-hamburger" onclick="sidebarToggle()"><span></span><span></span><span></span></button>
+    <button class="bw-hamburger" onclick="sidebarToggle()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-<!-- hero section -->
-  <section class="hero">
 
+<!-- ═══════════════════════════════════════════
+     HERO — PUSH-SLIDE EFFECT
+═══════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
 
-<!-- LOGO IMAGE -->
-    <a href="" class="logo">
-      <img src="logo.png" alt="logo">
-    </a>
-<!-- FADING HERO IMAGES -->
-    <div class="scrollable">
-      <!-- left slide -->
-      <div class="slide leftSlide" id="leftSlide">
+  <!-- Two-column continuous vertical scroll -->
+  <div class="scrollable" aria-hidden="true">
+    <!-- Left column — scrolls downward -->
+    <div class="slide leftSlide">
+      <div class="slide-track">
+        <img src="brownOfficials.jpg" alt="">
+        <img src="sandalHeel.jpg" alt="">
+        <img src="semiClosedHeel.jpg" alt="">
+        <img src="versaceHeels.jpg" alt="">
+        <!-- Duplicate for seamless loop -->
         <img src="brownOfficials.jpg" alt="">
         <img src="sandalHeel.jpg" alt="">
         <img src="semiClosedHeel.jpg" alt="">
         <img src="versaceHeels.jpg" alt="">
       </div>
-
-      <!-- right slide -->
-      <div class="slide rightSlide" id="rightSlide">
+    </div>
+    <!-- Right column — scrolls upward -->
+    <div class="slide rightSlide">
+      <div class="slide-track">
         <img src="beigeFlats.jpg" alt="">
         <img src="blackFlats.jpg" alt="">
         <img src="blackLoafers.jpg" alt="">
         <img src="goldenLows.jpg" alt="">
         <img src="ladySneakers.jpg" alt="">
-
-      </div>
-    </div>
-<!-- HERO TEXT -->
-    <div class="heroText">
-      <div class="textss textLeft">
-        <h1>CONFIDENCE</h1>
-      </div>
-      <div class="textss textRight">
-        <h1 style="color: rosybrown;">ELEGANCE</h1>
-        
-      </div>
-      <a href="">VISIT SHOP</a>
-    </div>
-
-
-
-    <div class="promotion">
-      <h1>20% off - new customers</h1>
-    </div>
-  </section>
-
-<!-- advert grid -->
-  <section class="advertGrid">
-    <div class="advertContainer">
-      <div class="adverts">
-        <img src="https://i.pinimg.com/736x/a9/ed/4b/a9ed4bca725bb4000cf0d385223df02e.jpg" alt="new arrivals">
-        <h3>NEW ARRIVALS</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-      <div class="adverts">
-        <img src="https://i.pinimg.com/736x/2d/f5/a5/2df5a5b3c13f0f3897c1b8d833c3a402.jpg" alt="trendy ">
-        <h3>TRENDING NOW</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-      <div class="adverts">
-        <img src="https://i.pinimg.com/736x/63/75/39/6375392d3c84dc8cc3dfbde4efde6143.jpg" alt="dress">
-        <h3>50% OFF DRESSES</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-      <div class="adverts">
-        <img src="https://i.pinimg.com/1200x/5f/07/46/5f074640fe78ac32982661dc5da4cdeb.jpg" alt="tops">
-        <h3>30% OFF TOPS</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-      <div class="adverts">
-        <img src="https://i.pinimg.com/1200x/32/c1/61/32c161045efcaf1255e2fda711090204.jpg" alt="sandals">
-        <h3>UP TO 30% OFF SANDALS</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-      <div class="adverts">
-        <img src="https://i.pinimg.com/1200x/fd/3a/6e/fd3a6e06c591fd86f85104da1a04b630.jpg" alt="men">
-        <h3>UP TO 30% OFF GENTLEMEN</h3>
-        <a href="http://" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
-      </div>
-    </div>
-
-    <!-- SCROLLING -->
-
-      <!-- left scrolling -->
-      <img id="leftScroll" src="left.png" alt="left icon">
-      <!-- right scrolling -->
-      <img id="rightScroll" src="right.png" alt="right icon">
-
-  </section>
-
-<!-- what we sell -->
-  <section class="soldScroll" >
-    <div class="whatSold" id="whatSold">
-      <div>
-        <img src="heelsScroll.png" alt="heels">
-        <span>HEELS</span>
-      </div>
-      <div>
-        <img src="flatsScroll.png" alt="flats">
-        <span>SLIDES</span>
-      </div>
-      <div>
-        <img src="openScroll.png" alt="open">
-        <span>WEDGES</span>
-      </div>
-      <div>
-        <img src="backpack.png" alt="bag">
-        <span>BAGS</span>
-      </div>
-      <div>
-        <img src="menScroll.png" alt="men officials">
-        <span>BOOTS</span>
-      </div>
-      <div class="flatscroll">
-        <img src="closedFlatsFront.png" alt="flats">
-        <span>FLATS</span>
-      </div>
-      <div>
-        <img src="versaceHeels-removebg-preview.png" alt="open heels">
-        <span>WEDDINGS</span>
-      </div>
-    </div>
-  </section>
-
-<!-- trending shoes -->
-  <section class="trending">
-    <div class="trendWrapper">
-      <h2><span>the</span> TREND</h2>
-      <div class="trendingContainer">
-      <!-- open block heels -->
-       <div class="trends" >
-        <img class="defaultImg" src="blockSide.png" alt="side">
-        <img class="hoverImg" src="blockFront.png" alt="front">
-        <div class="pricing">
-          <p>Open Chunky Blocks</p>
-          <div class="text">
-            <span>Kes. 2,705</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- closed block heels -->
-       <div class="trends" >
-        <img class="defaultImg" src="closedSide.png" alt="side">
-        <img class="hoverImg" src="closedFront.png" alt="front">
-        <div class="pricing">
-          <p>Closed Chunky Blocks</p>
-          <div class="text">
-            <span>Kes. 2,499</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- open flats -->
-       <div class="trends" >
-        <img class="defaultImg" src="openFlatsSide.png" alt="side">
-        <img class="hoverImg" src="openFlatsFront.png" alt="front">
-        <div class="pricing">
-          <p>Slide Sandals</p>
-          <div class="text">
-            <span>Kes. 1,099</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- closed flats -->
-       <div class="trends" >
-        <img class="defaultImg" src="closedFlatsSide.png" alt="side">
-        <img class="hoverImg" src="closedFlatsFront.png" alt="front">
-        <div class="pricing">
-          <p>Closed Flats</p>
-          <div class="text">
-            <span>Kes. 1,800</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- loafers -->
-       <div class="trends" >
-        <img class="defaultImg" src="loafersSide.png" alt="side">
-        <img class="hoverImg" src="loaferFront.png" alt="front">
-        <div class="pricing">
-          <p>Lady loafers</p>
-          <div class="text">
-            <span>Kes. 1,995</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- clogs -->
-       <div class="trends" >
-        <img class="defaultImg" src="clogsSide.png" alt="side">
-        <img class="hoverImg" src="clogsFront.png" alt="front">
-        <div class="pricing">
-          <p>Unisex Clogs</p>
-          <div class="text">
-            <span>Kes. 2,195</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- lady boots -->
-       <div class="trends" >
-        <img class="defaultImg" src="bootsSide.png" alt="side">
-        <img class="hoverImg" src="bootsFront.png" alt="front">
-        <div class="pricing">
-          <p>Girls Combat Boots</p>
-          <div class="text">
-            <span>Kes. 3,099</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- men boots -->
-       <div class="trends" >
-        <img class="defaultImg" src="menSide.png" alt="side">
-        <img class="hoverImg" src="menFront.png" alt="front">
-        <div class="pricing">
-          <p>Boots 4 Men</p>
-          <div class="text">
-            <span>Kes. 3,899</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- lady sneakers -->
-       <div class="trends" >
-        <img class="defaultImg" src="ladySneakerSide.png" alt="side">
-        <img class="hoverImg" src="ladySneakerFront.png" alt="front">
-        <div class="pricing">
-          <p>Ladies Sneakers</p>
-          <div class="text">
-            <span>Kes. 2,450</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-      <!-- men sneakers -->
-       <div class="trends" >
-        <img class="defaultImg" src="forMen.png" alt="side">
-        <img class="hoverImg" src="forMenFront.png" alt="front">
-        <div class="pricing">
-          <p>For Men</p>
-          <div class="text">
-            <span>Kes. 1,899</span>
-            <img src="cart.png" alt="shopping cart">
-          </div>
-          
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP PERKS AND FORM SECTION -->
-   <section class="perks">
-    <div class="perksWrapper">
-      <div class="container">
-        <h2>Free Membership, Free Perks</h2>
-        <p>Early access to products and promotions</p>
-      </div>
-      <div class="container2">
-        <div class="eachPerk">
-          <img src="bag.png" alt="shopping bag">
-          <span>An extra 10% off last chance styles</span>
-        </div>
-        <div class="eachPerk">
-          <img src="unlock.png" alt="unlocked padlock">
-          <span>Early access to limited-edition looks</span>
-        </div>
-        <div class="eachPerk">
-          <img src="booking.png" alt="boxed order">
-          <span>Tracking on all orders</span>
-        </div>
-        <div class="eachPerk">
-          <img src="truck.png" alt="lorry fast delivery">
-          <span>Free ground shipping on full price purchases</span>
-        </div>
-        <div class="eachPerk">
-          <img src="rush.png" alt="checkout clock">
-          <span>Faster chackout experience</span>
-        </div>
-      </div>
-    </div>
-    <div class="formWrapper">
-      <form action="" method="post">
-        <h1>BECOME A MEMBER</h1>
-        <!-- select section -->
-        <div class="selectContainer">
-          <select name="salutation" id="salutation" required>
-          <option>Please select</option>
-          <option>Ms.</option>
-          <option>Mr.</option>
-          <option>Mrs.</option>
-        </select>
-        <label for="salutation">Salutation</label>
-        <span class="underline"></span>
-        </div>
-        <!-- first name -->
-        <div class="inputContainer">
-          <input type="text" name="firstName" id="firstName" required>
-          <label for="firstName">First name</label>
-          <span class="underline"></span>
-        </div>
-        <!-- last name -->
-        <div class="inputContainer">
-          <input type="text" name="lastName" id="lastName" required>
-          <label for="lastName">Last name</label>
-          <span class="underline"></span>
-        </div>
-        <!-- email -->
-         <div class="inputContainer">
-          <input type="email" name="email" id="email" required>
-          <label for="email">Email</label>
-          <span class="underline"></span>
-        </div>
-         <!-- pasword -->
-          <div class="inputContainer">
-          <input type="password" name="password" id="password" required>
-          <label for="password">Password</label>
-          <span class="underline"></span>
-        </div>
-          <!-- confirm password -->
-           <div class="inputContainer">
-          <input type="Password" name="confirmPassword" id="confirmPassword" required>
-          <label for="confirmPassword">Confirm password</label>
-          <span class="underline"></span>
-        </div>
-           <!-- submit button -->
-            <button type="submit">REGISTER NOW</button>
-
-        <p class="recaptcha">This site is protected by reCAPTCHA and the google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply</p>
-      </form>
-
-      <!-- login redirect -->
-       <p class="loginRedirect">Have an account? <a href="">Log in here</a></p>
-    </div>
-   </section>
-
-   <!-- what we sell -->
-  <section class="soldScroll" >
-    <div class="whatSold" id="whatSoldTwice">
-      <div>
-        <img src="heelsScroll.png" alt="heels">
-        <span>HEELS</span>
-      </div>
-      <div>
-        <img src="flatsScroll.png" alt="flats">
-        <span>SLIDES</span>
-      </div>
-      <div>
-        <img src="openScroll.png" alt="open">
-        <span>WEDGES</span>
-      </div>
-      <div>
-        <img src="backpack.png" alt="bag">
-        <span>BAGS</span>
-      </div>
-      <div>
-        <img src="menScroll.png" alt="men officials">
-        <span>BOOTS</span>
-      </div>
-      <div class="flatscroll">
-        <img src="closedFlatsFront.png" alt="flats">
-        <span>FLATS</span>
-      </div>
-      <div>
-        <img src="versaceHeels-removebg-preview.png" alt="open heels">
-        <span>WEDDINGS</span>
-      </div>
-    </div>
-  </section>
-
-<!-- footer -->
- <footer class="mainFooter">
-  <!-- newsletter and socials -->
-  <div class="newsletterContainer">
-    <!-- newsletter -->
-    <form class="newsletter">
-      <h3>NEWSLETTER</h3>
-      <p>Join our email list for news and special offers</p>
-      <!-- email -->
-         <div class="inputContainer">
-          <input type="email" name="email" id="email" required>
-          <label for="email">Your email address</label>
-          <span class="underline"></span>
-        </div>
-
-        <button>SUBSCRIBE</button>
-    </form>
-    <!-- follow us -->
-    <div class="newsletter socials">
-      <h3>FOLLOW BEMILWIS</h3>
-      <P>Join us, be a part our journey</P>
-      <div class="iconLinks">
-        <a href=""><img src="instagram.png" alt="instagram icon"></a>
-        <a href=""><img src="pinterest.png" alt="pinterest icon"></a>
-        <a href=""><img src="youtube.png" alt="youtube icon"></a>
-        <a href=""><img src="video.png" alt="tiktok icon"></a>
+        <!-- Duplicate for seamless loop -->
+        <img src="beigeFlats.jpg" alt="">
+        <img src="blackFlats.jpg" alt="">
+        <img src="blackLoafers.jpg" alt="">
+        <img src="goldenLows.jpg" alt="">
+        <img src="ladySneakers.jpg" alt="">
       </div>
     </div>
   </div>
 
-  <!-- navigation -->
-   <div class="footerNavs">
-    <a href="">Home</a>
-    <a href="">Our Shop</a>
-    <a href="">About us</a>
-    <a href="">Contact Us</a>
-   </div>
+  <!-- Hero Copy -->
+  <div class="heroText">
+    <p class="hero-eyebrow">Bemilwis Boutique &amp; Shoes</p>
+    <h1 class="hero-title">
+      Step Into<br>
+      <em>Confidence</em><br>
+      <strong>&amp; Elegance</strong>
+    </h1>
+    <p class="hero-sub">Curated footwear for women and men who walk with purpose. Premium quality, delivered worldwide.</p>
+    <div class="hero-actions">
+      <a href="shop.html" class="hero-cta-primary">Explore Collection →</a>
+      <a href="#trending" class="hero-cta-outline">See What's Trending</a>
+    </div>
+    <p class="hero-eyebrow" style="margin-top: 20px;">· Est. 2020 · Kisii, Kenya</p>
+  </div>
 
-<div class="copyright">
-  <p>© 2026 BEMILWIS boutique and shoes</p>
-  <span><em>Developed by <a href="">Casual _code_ studios</a></em></span>
+  <!-- Promo ticker -->
+  <div class="promo-ticker" aria-label="Promotions">
+    <div class="ticker-inner">
+      <span>20% Off — New Customers</span>
+      <span class="ticker-sep">✦</span>
+      <span>Free Shipping on Orders Over Kes. 5,000</span>
+      <span class="ticker-sep">✦</span>
+      <span>WhatsApp Order — Delivered to Your Door</span>
+      <span class="ticker-sep">✦</span>
+      <span>New Season Arrivals Now Live</span>
+      <span class="ticker-sep">✦</span>
+      <!-- duplicate -->
+      <span>20% Off — New Customers</span>
+      <span class="ticker-sep">✦</span>
+      <span>Free Shipping on Orders Over Kes. 5,000</span>
+      <span class="ticker-sep">✦</span>
+      <span>WhatsApp Order — Delivered to Your Door</span>
+      <span class="ticker-sep">✦</span>
+      <span>New Season Arrivals Now Live</span>
+      <span class="ticker-sep">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CATEGORY ICON STRIP
+═══════════════════════════════════════════ -->
+<section class="soldScroll" aria-label="Product categories">
+  <div class="whatSold" id="whatSold">
+    <div><img src="heelsScroll.png" alt="Heels"><span>Heels</span></div>
+    <div><img src="flatsScroll.png" alt="Slides"><span>Slides</span></div>
+    <div><img src="openScroll.png" alt="Wedges"><span>Wedges</span></div>
+    <div><img src="backpack.png" alt="Bags"><span>Bags</span></div>
+    <div><img src="menScroll.png" alt="Boots"><span>Boots</span></div>
+    <div><img src="closedFlatsFront.png" alt="Flats"><span>Flats</span></div>
+    <div><img src="versaceHeels-removebg-preview.png" alt="Weddings"><span>Weddings</span></div>
+    <div><img src="heelsScroll.png" alt="Heels"><span>Heels</span></div>
+    <div><img src="flatsScroll.png" alt="Slides"><span>Slides</span></div>
+    <div><img src="openScroll.png" alt="Wedges"><span>Wedges</span></div>
+    <div><img src="backpack.png" alt="Bags"><span>Bags</span></div>
+    <div><img src="menScroll.png" alt="Boots"><span>Boots</span></div>
+    <div><img src="closedFlatsFront.png" alt="Flats"><span>Flats</span></div>
+    <div><img src="versaceHeels-removebg-preview.png" alt="Weddings"><span>Weddings</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ADVERT CAROUSEL
+═══════════════════════════════════════════ -->
+<section class="advertGrid" aria-label="Featured collections">
+  <h2 class="advert-heading">Shop by <em>Mood</em></h2>
+  <div class="advertContainer" id="advertContainer">
+    <div class="adverts">
+      <img src="https://i.pinimg.com/736x/a9/ed/4b/a9ed4bca725bb4000cf0d385223df02e.jpg" alt="New arrivals" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>New Arrivals</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+    <div class="adverts">
+      <img src="https://i.pinimg.com/736x/2d/f5/a5/2df5a5b3c13f0f3897c1b8d833c3a402.jpg" alt="Trending" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>Trending Now</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+    <div class="adverts">
+      <img src="https://i.pinimg.com/736x/63/75/39/6375392d3c84dc8cc3dfbde4efde6143.jpg" alt="50% off dresses" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>50% Off Dresses</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+    <div class="adverts">
+      <img src="https://i.pinimg.com/1200x/5f/07/46/5f074640fe78ac32982661dc5da4cdeb.jpg" alt="30% off tops" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>30% Off Tops</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+    <div class="adverts">
+      <img src="https://i.pinimg.com/1200x/32/c1/61/32c161045efcaf1255e2fda711090204.jpg" alt="30% off sandals" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>Up to 30% Off Sandals</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+    <div class="adverts">
+      <img src="https://i.pinimg.com/1200x/fd/3a/6e/fd3a6e06c591fd86f85104da1a04b630.jpg" alt="Gentlemen" loading="lazy">
+      <div class="adverts-overlay">
+        <h3>30% Off Gentlemen</h3>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-arrows">
+    <button id="leftScroll" aria-label="Scroll left">←</button>
+    <button id="rightScroll" aria-label="Scroll right">→</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRENDING SECTION
+═══════════════════════════════════════════ -->
+<section class="trending" id="trending" aria-label="Trending products">
+  <div class="trending-header reveal" style="padding: 0 var(--pad-x);">
+    <h2><span>The</span> Trend</h2>
+    <a href="shop.html">View All →</a>
+  </div>
+  <div class="trendingScroll" id="trendingScroll">
+    <div class="trends reveal reveal-d1" onclick="openShoeDashboard(trendProducts[0])">
+      <img class="defaultImg" src="blockSide.png" alt="Open Chunky Blocks side view">
+      <img class="hoverImg" src="blockFront.png" alt="Open Chunky Blocks front view">
+      <div class="pricing">
+        <p>Open Chunky Blocks</p>
+        <div class="text">
+          <span>Kes. 2,705</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(0)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d2" onclick="openShoeDashboard(trendProducts[1])">
+      <img class="defaultImg" src="closedSide.png" alt="Closed Chunky Blocks side view">
+      <img class="hoverImg" src="closedFront.png" alt="Closed Chunky Blocks front view">
+      <div class="pricing">
+        <p>Closed Chunky Blocks</p>
+        <div class="text">
+          <span>Kes. 2,499</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(1)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d3" onclick="openShoeDashboard(trendProducts[2])">
+      <img class="defaultImg" src="openFlatsSide.png" alt="Slide Sandals">
+      <img class="hoverImg" src="openFlatsFront.png" alt="Slide Sandals front">
+      <div class="pricing">
+        <p>Slide Sandals</p>
+        <div class="text">
+          <span>Kes. 1,099</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(2)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d4" onclick="openShoeDashboard(trendProducts[3])">
+      <img class="defaultImg" src="closedFlatsSide.png" alt="Closed Flats">
+      <img class="hoverImg" src="closedFlatsFront.png" alt="Closed Flats front">
+      <div class="pricing">
+        <p>Closed Flats</p>
+        <div class="text">
+          <span>Kes. 1,800</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(3)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d1" onclick="openShoeDashboard(trendProducts[4])">
+      <img class="defaultImg" src="loafersSide.png" alt="Lady Loafers">
+      <img class="hoverImg" src="loaferFront.png" alt="Lady Loafers front">
+      <div class="pricing">
+        <p>Lady Loafers</p>
+        <div class="text">
+          <span>Kes. 1,995</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(4)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d2" onclick="openShoeDashboard(trendProducts[5])">
+      <img class="defaultImg" src="clogsSide.png" alt="Unisex Clogs">
+      <img class="hoverImg" src="clogsFront.png" alt="Unisex Clogs front">
+      <div class="pricing">
+        <p>Unisex Clogs</p>
+        <div class="text">
+          <span>Kes. 2,195</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(5)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d3" onclick="openShoeDashboard(trendProducts[6])">
+      <img class="defaultImg" src="bootsSide.png" alt="Girls Combat Boots">
+      <img class="hoverImg" src="bootsFront.png" alt="Girls Combat Boots front">
+      <div class="pricing">
+        <p>Girls Combat Boots</p>
+        <div class="text">
+          <span>Kes. 3,099</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(6)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends reveal reveal-d4" onclick="openShoeDashboard(trendProducts[7])">
+      <img class="defaultImg" src="menSide.png" alt="Boots 4 Men">
+      <img class="hoverImg" src="menFront.png" alt="Boots 4 Men front">
+      <div class="pricing">
+        <p>Boots 4 Men</p>
+        <div class="text">
+          <span>Kes. 3,899</span>
+          <button class="add-cart-icon" onclick="event.stopPropagation();quickAdd(7)" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll hint arrows -->
+  <div class="trending-scroll-arrows">
+    <button id="trendLeft" aria-label="Scroll left" onclick="document.getElementById('trendingScroll').scrollBy({left:-340,behavior:'smooth'})">←</button>
+    <button id="trendRight" aria-label="Scroll right" onclick="document.getElementById('trendingScroll').scrollBy({left:340,behavior:'smooth'})">→</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SHOES CATEGORY CARDS — with CTA to shop
+═══════════════════════════════════════════ -->
+<section class="categories-preview" id="categories" aria-label="Shop categories">
+  <div class="reveal" style="padding: 0 var(--pad-x);">
+    <p class="section-label">Collections</p>
+    <h2 class="section-title">Walk in <em>Style</em></h2>
+    <p class="section-desc">Over 100 styles in stock — crafted for every occasion, every step, every mood.</p>
+  </div>
+  <div class="cat-cards-scroll" id="catScroll">
+
+    <!-- 1 -->
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'h1',name:'Stiletto Pumps',price:3500,img:'https://images.unsplash.com/photo-1581101767113-1677fe077673?w=600&q=80',sizes:['36','37','38','39','40','41'],colors:[{hex:'#2c1810',name:'Dark Mocha'},{hex:'#c8a882',name:'Nude'}]})">
+      <div class="cat-card-img">
+        <img src="https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=700&auto=format&fit=crop&q=60" alt="Stiletto Pumps" loading="lazy">
+      </div>
+      <span class="cat-card-badge">New</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Stiletto Pumps</p>
+        <p class="cat-card-price">Kes. 3,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'h1',name:'Stiletto Pumps',price:3500,img:'https://images.unsplash.com/photo-1581101767113-1677fe077673?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'b1',name:'Chelsea Boots',price:3500,img:'https://images.unsplash.com/photo-1520639889313-7272fd25c18f?w=600&q=80',sizes:['36','37','38','39','40','41','42'],colors:[{hex:'#1a1a1a',name:'Jet Black'},{hex:'#5c3d2e',name:'Brown'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/1200x/d0/24/cc/d024ccadf1cd765e40668e27698b756c.jpg" alt="Chelsea Boots" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Hot</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Chelsea Boots</p>
+        <p class="cat-card-price">Kes. 3,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'b1',name:'Chelsea Boots',price:3500,img:'https://images.unsplash.com/photo-1520639889313-7272fd25c18f?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="cat-card reveal reveal-d3" onclick="openShoeDashboard({id:'s1',name:'Platform Slides',price:2500,img:'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80',sizes:['36','37','38','39','40'],colors:[{hex:'#f5f5f0',name:'White'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80" alt="Platform Slides" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Gen‑Z Fave</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Platform Slides</p>
+        <p class="cat-card-price">Kes. 2,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'s1',name:'Platform Slides',price:2500,img:'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="cat-card reveal reveal-d4" onclick="openShoeDashboard({id:'m1',name:'Men Sneakers',price:1899,img:'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80',sizes:['40','41','42','43','44','45'],colors:[{hex:'#fff',name:'White'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" alt="Men Sneakers" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Best Seller</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Men Sneakers</p>
+        <p class="cat-card-price">Kes. 1,899</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'m1',name:'Men Sneakers',price:1899,img:'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'w1',name:'Block Heel Mules',price:2799,img:'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80',sizes:['36','37','38','39','40'],colors:[{hex:'#c8a882',name:'Nude'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/1200x/23/7e/a4/237ea4a97cfbd2dc67f279c4c24c940c.jpg" alt="Block Heel Mules" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Trending</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Block Heel Mules</p>
+        <p class="cat-card-price">Kes. 2,799</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'w1',name:'Block Heel Mules',price:2799,img:'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'k1',name:'Kids Glitter Flats',price:1299,img:'https://images.unsplash.com/photo-1555708982-8645ec9ce3cc?w=600&q=80',sizes:['28','29','30','31','32','33','34','35'],colors:[{hex:'#f7c9d4',name:'Pink'},{hex:'#c8a882',name:'Gold'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/44/e3/64/44e364d916f0dea14e4012f2cc6c071e.jpg" alt="Kids Glitter Flats" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Kids</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Kids Glitter Flats</p>
+        <p class="cat-card-price">Kes. 1,299</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'k1',name:'Kids Glitter Flats',price:1299,img:'https://images.unsplash.com/photo-1555708982-8645ec9ce3cc?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="cat-card reveal reveal-d3" onclick="openShoeDashboard({id:'a1',name:'Ankle Strap Heels',price:3199,img:'https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?w=600&q=80',sizes:['36','37','38','39','40','41'],colors:[{hex:'#b85c6e',name:'Rose'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/36/42/38/3642382b37a58f8ea77d935ce2091bb0.jpg" alt="Ankle Strap Heels" loading="lazy">
+      </div>
+      <span class="cat-card-badge">New In</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Ankle Strap Heels</p>
+        <p class="cat-card-price">Kes. 3,199</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'a1',name:'Ankle Strap Heels',price:3199,img:'https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="cat-card reveal reveal-d4" onclick="openShoeDashboard({id:'lo1',name:'Leather Loafers',price:2950,img:'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=600&q=80',sizes:['38','39','40','41','42','43'],colors:[{hex:'#5c3d2e',name:'Tan'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/df/e2/1d/dfe21df52b003db339931885a0ea3414.jpg" alt="Leather Loafers" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Unisex</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Leather Loafers</p>
+        <p class="cat-card-price">Kes. 2,950</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'lo1',name:'Leather Loafers',price:2950,img:'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'wb1',name:'Wedge Espadrilles',price:2350,img:'https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=600&q=80',sizes:['36','37','38','39','40','41'],colors:[{hex:'#d2a679',name:'Camel'},{hex:'#fff5e0',name:'Off‑White'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/cc/8a/83/cc8a838655df94b5127d6bbc172ced60.jpg" alt="Wedge Espadrilles" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Summer Pick</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Wedge Espadrilles</p>
+        <p class="cat-card-price">Kes. 2,350</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'wb1',name:'Wedge Espadrilles',price:2350,img:'https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'ox1',name:'Men Oxford Lace‑Up',price:4200,img:'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=600&q=80',sizes:['40','41','42','43','44','45'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#8b4513',name:'Cognac'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/1200x/25/51/89/255189b3b5b31840731ceccc880b77bb.jpg" alt="Men Oxford Lace-Up" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Premium</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Men Oxford Lace‑Up</p>
+        <p class="cat-card-price">Kes. 4,200</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ox1',name:'Men Oxford Lace-Up',price:4200,img:'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&q=80'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Scroll arrows -->
+  <div class="cat-scroll-arrows" style="padding: 0 var(--pad-x);">
+    <button aria-label="Scroll left" onclick="document.getElementById('catScroll').scrollBy({left:-300,behavior:'smooth'})">←</button>
+    <button aria-label="Scroll right" onclick="document.getElementById('catScroll').scrollBy({left:300,behavior:'smooth'})">→</button>
+  </div>
+  <div class="categories-cta reveal" style="padding: 0 var(--pad-x);">
+    <a href="shop.html">Explore Full Collection &nbsp; →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SPLIT SECTION 1 — Image Right, Text Left
+═══════════════════════════════════════════ -->
+<section class="split-section" id="about" aria-label="About our quality">
+  <div class="split-content reveal-left">
+    <p class="section-label">Our Promise</p>
+    <h2 class="section-title">Crafted for<br><em>Every Step</em></h2>
+    <p>Every pair in the Bemilwis collection is chosen with intention — where craftsmanship meets design, and comfort never compromises style. From streets of Kisii to your doorstep, we bring premium fashion to you.</p>
+    <a href="shop.html" class="split-cta primary">Shop the Collection</a>
+  </div>
+  <div class="split-image reveal-right">
+    <img src="https://i.pinimg.com/1200x/1f/39/c1/1f39c10c5d608955643535e4dc11f24c.jpg" alt="Premium heels craftsmanship" loading="lazy">
+    <div class="split-image-overlay"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS RIBBON
+═══════════════════════════════════════════ -->
+<div class="stats-ribbon reveal" aria-label="Our achievements">
+  <div class="stat-item">
+    <div class="stat-number">2k+</div>
+    <div class="stat-label">Happy Customers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Styles Available</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">4.5★</div>
+    <div class="stat-label">Average Rating</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">48h</div>
+    <div class="stat-label">Average Delivery</div>
+  </div>
 </div>
- </footer>
-  <!-- scripts -->
-<script src="main.js"></script>
+
+<!-- ═══════════════════════════════════════════
+     SPLIT SECTION 2 — Image Left, Text Right
+     (dark variant)
+═══════════════════════════════════════════ -->
+<section class="split-section dark reverse" aria-label="Exclusive membership">
+  <div class="split-content reveal-right">
+    <p class="section-label">Membership Perks</p>
+    <h2 class="section-title">Exclusive <em>Access</em><br>Awaits You</h2>
+    <p>Join our free membership and unlock early access to new drops, member-only discounts, order tracking, and faster checkout — all for free. Your fashion journey, elevated.</p>
+    <button class="split-cta outline auth-trigger">Become a Member</button>
+  </div>
+  <div class="split-image reveal-left">
+    <img src="https://images.unsplash.com/photo-1512374382149-4332c6c02151?w=900&q=80" alt="Exclusive boutique experience" loading="lazy">
+    <div class="split-image-overlay"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FASHION & CLOTHING COLLECTION
+═══════════════════════════════════════════ -->
+<section class="categories-preview fashion-collection" id="fashion" aria-label="Fashion and clothing">
+  <div class="reveal" style="padding: 0 var(--pad-x);">
+    <p class="section-label">Fashion &amp; Clothing</p>
+    <h2 class="section-title">Dress to <em>Impress</em></h2>
+    <p class="section-desc">From flowy dresses to sharp suits — we've got the whole family covered. Ladies, Men &amp; Kids.</p>
+  </div>
+
+  <!-- LADIES -->
+  <div class="fashion-sub-header reveal" style="padding: 0 var(--pad-x);">
+    <span class="fashion-sub-label">Ladies</span>
+  </div>
+  <div class="cat-cards-scroll" id="fashionLadies">
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'ld1',name:'Floral Maxi Dress',price:3800,img:'https://i.pinimg.com/736x/d6/89/ab/d689ab81aba508aeb94dceb6429e2d02.jpg',sizes:['XS','S','M','L','XL'],colors:[{hex:'#e8a0bf',name:'Blush'},{hex:'#3a5a40',name:'Sage'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/d6/89/ab/d689ab81aba508aeb94dceb6429e2d02.jpg" alt="Floral Maxi Dress" loading="lazy">
+      </div>
+      <span class="cat-card-badge">New</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Floral Maxi Dress</p>
+        <p class="cat-card-price">Kes. 3,800</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ld1',name:'Floral Maxi Dress',price:3800,img:'https://i.pinimg.com/736x/d6/89/ab/d689ab81aba508aeb94dceb6429e2d02.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'ld2',name:'Bodycon Evening Dress',price:4500,img:'https://i.pinimg.com/736x/0b/e6/12/0be612440950fb5d9459bc3885c0cf33.jpg',sizes:['XS','S','M','L','XL'],colors:[{hex:'#1a1a1a',name:'Jet Black'},{hex:'#b85c6e',name:'Rose Red'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/0b/e6/12/0be612440950fb5d9459bc3885c0cf33.jpg" alt="Bodycon Evening Dress" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Hot</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Bodycon Evening Dress</p>
+        <p class="cat-card-price">Kes. 4,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ld2',name:'Bodycon Evening Dress',price:4500,img:'https://i.pinimg.com/736x/0b/e6/12/0be612440950fb5d9459bc3885c0cf33.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d3" onclick="openShoeDashboard({id:'ld3',name:'Linen Co-ord Set',price:3200,img:'https://i.pinimg.com/736x/0d/fc/84/0dfc8486215315c12c194fd62ca7e2e9.jpg',sizes:['XS','S','M','L','XL','XXL'],colors:[{hex:'#f5ede0',name:'Cream'},{hex:'#3a5a40',name:'Olive'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/0d/fc/84/0dfc8486215315c12c194fd62ca7e2e9.jpg" alt="Linen Co-ord Set" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Trending</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Linen Co‑ord Set</p>
+        <p class="cat-card-price">Kes. 3,200</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ld3',name:'Linen Co-ord Set',price:3200,img:'https://i.pinimg.com/736x/0d/fc/84/0dfc8486215315c12c194fd62ca7e2e9.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d4" onclick="openShoeDashboard({id:'ld4',name:'Wrap Midi Skirt',price:2100,img:'https://i.pinimg.com/736x/82/85/cd/8285cdfdff05641ea7fbcda6d524c9ef.jpg',sizes:['XS','S','M','L','XL'],colors:[{hex:'#c49a3c',name:'Gold'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/82/85/cd/8285cdfdff05641ea7fbcda6d524c9ef.jpg" alt="Wrap Midi Skirt" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Best Seller</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Wrap Midi Skirt</p>
+        <p class="cat-card-price">Kes. 2,100</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ld4',name:'Wrap Midi Skirt',price:2100,img:'https://i.pinimg.com/736x/82/85/cd/8285cdfdff05641ea7fbcda6d524c9ef.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'ld5',name:'Puff Sleeve Blouse',price:1850,img:'https://i.pinimg.com/736x/38/95/07/3895075c468bc222922ba0e4390fea9b.jpg',sizes:['XS','S','M','L','XL'],colors:[{hex:'#fffdf8',name:'White'},{hex:'#e8a0bf',name:'Dusty Pink'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/38/95/07/3895075c468bc222922ba0e4390fea9b.jpg" alt="Puff Sleeve Blouse" loading="lazy">
+      </div>
+      <span class="cat-card-badge">New In</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Puff Sleeve Blouse</p>
+        <p class="cat-card-price">Kes. 1,850</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'ld5',name:'Puff Sleeve Blouse',price:1850,img:'https://i.pinimg.com/736x/38/95/07/3895075c468bc222922ba0e4390fea9b.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MEN -->
+  <div class="fashion-sub-header reveal" style="padding: 0 var(--pad-x); margin-top: 42px;">
+    <span class="fashion-sub-label">👔 Men</span>
+  </div>
+  <div class="cat-cards-scroll" id="fashionMen">
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'mn1',name:'Slim Fit Suit',price:8500,img:'https://i.pinimg.com/736x/01/e5/05/01e505203c5e22c50f028fb6d88ec17c.jpg',sizes:['S','M','L','XL','XXL'],colors:[{hex:'#1a1a1a',name:'Charcoal'},{hex:'#1a2e4a',name:'Navy'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/01/e5/05/01e505203c5e22c50f028fb6d88ec17c.jpg" alt="Slim Fit Suit" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Premium</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Slim Fit Suit</p>
+        <p class="cat-card-price">Kes. 8,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'mn1',name:'Slim Fit Suit',price:8500,img:'https://i.pinimg.com/736x/01/e5/05/01e505203c5e22c50f028fb6d88ec17c.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'mn2',name:'Casual Linen Shirt',price:2200,img:'https://i.pinimg.com/736x/62/fd/de/62fdde8fc60b999ea80645d66db8971e.jpg',sizes:['S','M','L','XL','XXL'],colors:[{hex:'#f5ede0',name:'Cream'},{hex:'#5a8a7a',name:'Teal'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/62/fd/de/62fdde8fc60b999ea80645d66db8971e.jpg" alt="Casual Linen Shirt" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Hot</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Casual Linen Shirt</p>
+        <p class="cat-card-price">Kes. 2,200</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'mn2',name:'Casual Linen Shirt',price:2200,img:'https://i.pinimg.com/736x/62/fd/de/62fdde8fc60b999ea80645d66db8971e.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d3" onclick="openShoeDashboard({id:'mn3',name:'Chino Trousers',price:2800,img:'https://i.pinimg.com/736x/67/67/ba/6767bad2b3c497781bcd413cd447a5a1.jpg',sizes:['28','30','32','34','36','38'],colors:[{hex:'#c8a882',name:'Khaki'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/67/67/ba/6767bad2b3c497781bcd413cd447a5a1.jpg" alt="Chino Trousers" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Everyday</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Chino Trousers</p>
+        <p class="cat-card-price">Kes. 2,800</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'mn3',name:'Chino Trousers',price:2800,img:'https://i.pinimg.com/736x/67/67/ba/6767bad2b3c497781bcd413cd447a5a1.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d4" onclick="openShoeDashboard({id:'mn4',name:'Graphic Tee',price:1200,img:'https://i.pinimg.com/736x/5a/4b/ab/5a4bab5f3e59eabf85a71ffe2f8b7f86.jpg',sizes:['S','M','L','XL','XXL'],colors:[{hex:'#fffdf8',name:'White'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/5a/4b/ab/5a4bab5f3e59eabf85a71ffe2f8b7f86.jpg" alt="Graphic Tee" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Casual</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Graphic Tee</p>
+        <p class="cat-card-price">Kes. 1,200</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'mn4',name:'Graphic Tee',price:1200,img:'https://i.pinimg.com/736x/5a/4b/ab/5a4bab5f3e59eabf85a71ffe2f8b7f86.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'mn5',name:'Bomber Jacket',price:5500,img:'https://i.pinimg.com/736x/d9/c6/78/d9c6784561a014a090ef771169ee774f.jpg',sizes:['S','M','L','XL','XXL'],colors:[{hex:'#1a2e4a',name:'Navy'},{hex:'#1a1a1a',name:'Black'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/d9/c6/78/d9c6784561a014a090ef771169ee774f.jpg" alt="Bomber Jacket" loading="lazy">
+      </div>
+      <span class="cat-card-badge">New In</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Bomber Jacket</p>
+        <p class="cat-card-price">Kes. 5,500</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'mn5',name:'Bomber Jacket',price:5500,img:'https://i.pinimg.com/736x/d9/c6/78/d9c6784561a014a090ef771169ee774f.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KIDS -->
+  <div class="fashion-sub-header reveal" style="padding: 0 var(--pad-x); margin-top: 42px;">
+    <span class="fashion-sub-label">🧒 Kids</span>
+  </div>
+  <div class="cat-cards-scroll" id="fashionKids">
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'kd1',name:'Girls Party Dress',price:1950,img:'https://i.pinimg.com/736x/20/08/88/2008888c2e28e4db3b0267d0e0040b51.jpg',sizes:['2Y','4Y','6Y','8Y','10Y','12Y'],colors:[{hex:'#f7c9d4',name:'Pink'},{hex:'#e8d5f5',name:'Lilac'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/20/08/88/2008888c2e28e4db3b0267d0e0040b51.jpg" alt="Girls Party Dress" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Adorable</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Girls Party Dress</p>
+        <p class="cat-card-price">Kes. 1,950</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'kd1',name:'Girls Party Dress',price:1950,img:'https://i.pinimg.com/736x/20/08/88/2008888c2e28e4db3b0267d0e0040b51.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d2" onclick="openShoeDashboard({id:'kd2',name:'Boys Smart Trousers',price:1400,img:'https://i.pinimg.com/736x/3e/18/ba/3e18ba23ff53e8a5462a2ce9970cde74.jpg',sizes:['2Y','4Y','6Y','8Y','10Y','12Y'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#1a2e4a',name:'Navy'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/3e/18/ba/3e18ba23ff53e8a5462a2ce9970cde74.jpg" alt="Boys Smart Trousers" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Smart</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Boys Smart Trousers</p>
+        <p class="cat-card-price">Kes. 1,400</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'kd2',name:'Boys Smart Trousers',price:1400,img:'https://i.pinimg.com/736x/3e/18/ba/3e18ba23ff53e8a5462a2ce9970cde74.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d3" onclick="openShoeDashboard({id:'kd3',name:'Kids Denim Jacket',price:2100,img:'https://i.pinimg.com/736x/cc/13/d7/cc13d7d79fc5e659817e11625c208019.jpg',sizes:['2Y','4Y','6Y','8Y','10Y','12Y'],colors:[{hex:'#5b7fa6',name:'Denim Blue'},{hex:'#2c4a6e',name:'Dark Denim'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/cc/13/d7/cc13d7d79fc5e659817e11625c208019.jpg" alt="Kids Denim Jacket" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Cool Kid</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Kids Denim Jacket</p>
+        <p class="cat-card-price">Kes. 2,100</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'kd3',name:'Kids Denim Jacket',price:2100,img:'https://i.pinimg.com/736x/cc/13/d7/cc13d7d79fc5e659817e11625c208019.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d4" onclick="openShoeDashboard({id:'kd4',name:'Kids Tracksuit Set',price:1700,img:'https://i.pinimg.com/736x/55/0d/d0/550dd07fa60d17b7cc30a5aa699ae1d3.jpg',sizes:['2Y','4Y','6Y','8Y','10Y','12Y'],colors:[{hex:'#b85c6e',name:'Coral'},{hex:'#3a5a40',name:'Green'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/55/0d/d0/550dd07fa60d17b7cc30a5aa699ae1d3.jpg" alt="Kids Tracksuit Set" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Active</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Kids Tracksuit Set</p>
+        <p class="cat-card-price">Kes. 1,700</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'kd4',name:'Kids Tracksuit Set',price:1700,img:'https://i.pinimg.com/736x/55/0d/d0/550dd07fa60d17b7cc30a5aa699ae1d3.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-d1" onclick="openShoeDashboard({id:'kd5',name:'Girls Dungarees',price:1600,img:'https://i.pinimg.com/736x/f4/9c/f1/f49cf14422224529855dc5938733fc97.jpg',sizes:['2Y','4Y','6Y','8Y','10Y'],colors:[{hex:'#5b7fa6',name:'Denim'},{hex:'#b85c6e',name:'Pink'}]})">
+      <div class="cat-card-img">
+        <img src="https://i.pinimg.com/736x/f4/9c/f1/f49cf14422224529855dc5938733fc97.jpg" alt="Girls Dungarees" loading="lazy">
+      </div>
+      <span class="cat-card-badge">Cute</span>
+      <div class="cat-card-body">
+        <p class="cat-card-name">Girls Dungarees</p>
+        <p class="cat-card-price">Kes. 1,600</p>
+        <div class="cat-card-actions">
+          <button class="cat-card-btn-view" onclick="event.stopPropagation();window.location='shop.html'">View More</button>
+          <button class="cat-card-btn-add" onclick="event.stopPropagation();Cart.add({id:'kd5',name:'Girls Dungarees',price:1600,img:'https://i.pinimg.com/736x/f4/9c/f1/f49cf14422224529855dc5938733fc97.jpg'})" aria-label="Add to Bag"><img src="online-shopping.png" alt="Add to Bag"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="categories-cta reveal" style="padding: 0 var(--pad-x);">
+    <a href="shop.html">Browse All Fashion &amp; Clothing &nbsp; →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="testimonials" aria-label="Customer reviews">
+  <p class="section-label reveal">Customer Love</p>
+  <h2 class="section-title reveal">What Our <em>Clients</em> Say</h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal reveal-d1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The heels arrived in two days and they are absolutely divine. The quality is unlike anything I've found locally. My wedding guests were in awe!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J.M</div>
+        <div>
+          <p class="testi-name">Jane Momanyi</p>
+          <p class="testi-location">Kisii, Kenya</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Ordered via WhatsApp and it was so easy! The boots are perfect — exactly as described. Already shopping for my second pair."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M.O</div>
+        <div>
+          <p class="testi-name">Moses Ochieng</p>
+          <p class="testi-location">Nairobi, Kenya</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d3">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The membership perks are real — I got early access to the new collection and saved 15%. Bemilwis is my go-to boutique now, full stop."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">F.A</div>
+        <div>
+          <p class="testi-name">Fatuma Abdi</p>
+          <p class="testi-location">Mombasa, Kenya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PERKS SECTION
+═══════════════════════════════════════════ -->
+<section class="perks" aria-label="Membership perks">
+  <div class="perks-inner">
+    <p class="section-label reveal" style="text-align:center">Why Join Us</p>
+    <h2 class="section-title reveal">Free Membership,<br><em>Free Perks</em></h2>
+    <p class="section-desc reveal">Early access to products and promotions — because you deserve the best, first.</p>
+    <div class="container2">
+      <div class="eachPerk reveal reveal-d1">
+        <img src="bag.png" alt="Shopping bag">
+        <span>An extra 10% off last chance styles</span>
+      </div>
+      <div class="eachPerk reveal reveal-d2">
+        <img src="unlock.png" alt="Unlock">
+        <span>Early access to limited-edition looks</span>
+      </div>
+      <div class="eachPerk reveal reveal-d3">
+        <img src="booking.png" alt="Order tracking">
+        <span>Real-time tracking on all orders</span>
+      </div>
+      <div class="eachPerk reveal reveal-d4">
+        <img src="truck.png" alt="Fast delivery">
+        <span>Free ground shipping on full-price purchases</span>
+      </div>
+      <div class="eachPerk reveal reveal-d1">
+        <img src="rush.png" alt="Fast checkout">
+        <span>Faster checkout experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MEMBERSHIP / REGISTER FORM
+═══════════════════════════════════════════ -->
+<section class="formWrapper" id="register" aria-label="Become a member">
+  <h2 class="reveal">Become a <em style="color:var(--rose)">Member</em></h2>
+  <p class="reveal">Join thousands of happy Bemilwis members. It's free, always.</p>
+
+  <div class="bw-form-card reveal">
+    <div class="auth-error" id="regError"></div>
+    <form id="bwRegisterForm" novalidate autocomplete="off">
+      <fieldset class="bw-fieldset">
+        <legend>Personal Information</legend>
+        <div class="selectContainer">
+          <select name="salutation" id="salutation" required>
+            <option value="">Please select</option>
+            <option>Ms.</option>
+            <option>Mr.</option>
+            <option>Mrs.</option>
+            <option>Dr.</option>
+          </select>
+          <label for="salutation">Salutation</label>
+          <span class="underline"></span>
+        </div>
+        <div class="inputContainer">
+          <input type="text" name="firstName" id="firstName" placeholder=" " required autocomplete="given-name" minlength="2">
+          <label for="firstName">First name</label>
+          <span class="underline"></span>
+        </div>
+        <div class="inputContainer">
+          <input type="text" name="lastName" id="lastName" placeholder=" " required autocomplete="family-name" minlength="2">
+          <label for="lastName">Last name</label>
+          <span class="underline"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="bw-fieldset">
+        <legend>Account Credentials</legend>
+        <div class="inputContainer">
+          <input type="email" name="email" id="regEmail" placeholder=" " required autocomplete="email">
+          <label for="regEmail">Email address</label>
+          <span class="underline"></span>
+        </div>
+        <div class="inputContainer">
+          <input type="password" name="password" id="regPassword" placeholder=" " required minlength="8" oninput="checkPwStrength(this.value)">
+          <label for="regPassword">Password</label>
+          <span class="underline"></span>
+        </div>
+        <div class="pw-strength-bar"><div class="pw-strength-fill" id="pwFill"></div></div>
+        <p class="pw-strength-text" id="pwText">At least 8 characters</p>
+        <div class="inputContainer">
+          <input type="password" name="confirmPassword" id="confirmPassword" placeholder=" " required>
+          <label for="confirmPassword">Confirm password</label>
+          <span class="underline"></span>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="bw-form-btn">Create Free Account</button>
+      <p class="recaptcha">Protected by reCAPTCHA — <a href="#">Privacy Policy</a> &amp; <a href="#">Terms</a> apply.</p>
+    </form>
+    <p class="loginRedirect">Already a member? <a href="#" onclick="openAuthModal('login')">Log in here</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECOND STRIP
+═══════════════════════════════════════════ -->
+<section class="soldScroll" aria-hidden="true">
+  <div class="whatSold" id="whatSoldTwice">
+    <div><img src="heelsScroll.png" alt=""><span>Heels</span></div>
+    <div><img src="flatsScroll.png" alt=""><span>Slides</span></div>
+    <div><img src="openScroll.png" alt=""><span>Wedges</span></div>
+    <div><img src="backpack.png" alt=""><span>Bags</span></div>
+    <div><img src="menScroll.png" alt=""><span>Boots</span></div>
+    <div><img src="closedFlatsFront.png" alt=""><span>Flats</span></div>
+    <div><img src="versaceHeels-removebg-preview.png" alt=""><span>Weddings</span></div>
+    <div><img src="heelsScroll.png" alt=""><span>Heels</span></div>
+    <div><img src="flatsScroll.png" alt=""><span>Slides</span></div>
+    <div><img src="openScroll.png" alt=""><span>Wedges</span></div>
+    <div><img src="backpack.png" alt=""><span>Bags</span></div>
+    <div><img src="menScroll.png" alt=""><span>Boots</span></div>
+    <div><img src="closedFlatsFront.png" alt=""><span>Flats</span></div>
+    <div><img src="versaceHeels-removebg-preview.png" alt=""><span>Weddings</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="mainFooter" role="contentinfo">
+  <div class="bw-footer-inner">
+    <div class="bw-footer-brand">
+      <h2>Bemilwis<br><em>Boutique</em></h2>
+      <p>Fashion for women and men who walk with confidence. Premium quality, delivered with style. Based in Kisii, Kenya.</p>
+      <div class="bw-socials">
+        <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram" width="26"></a>
+        <a href="#" aria-label="Pinterest"><img src="pinterest.png" alt="Pinterest" width="26"></a>
+        <a href="#" aria-label="YouTube"><img src="youtube.png" alt="YouTube" width="26"></a>
+        <a href="#" aria-label="TikTok"><img src="video.png" alt="TikTok" width="26"></a>
+      </div>
+    </div>
+    <div class="bw-footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Our Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="bw-footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Returns &amp; Exchanges</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="bw-newsletter-foot">
+      <h4>Stay Stylish</h4>
+      <p>Subscribe for new arrivals and exclusive member offers.</p>
+      <form class="bw-newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Your email" required aria-label="Email for newsletter">
+        <button type="submit" aria-label="Subscribe">→</button>
+      </form>
+    </div>
+  </div>
+  <div class="bw-footer-bottom">
+    <span>© 2026 Bemilwis Boutique & Shoes. All rights reserved.</span>
+    <span>Developed by <a href="#">Casual Code Studios</a></span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     CART PANEL
+═══════════════════════════════════════════ -->
+<div class="bw-cart-overlay" id="bwCart" role="dialog" aria-label="Shopping cart">
+  <div class="bw-cart-panel">
+    <div class="bw-cart-header">
+      <h3>Your Bag 🛍️</h3>
+      <button onclick="setCartVisible(false)" aria-label="Close cart">✕</button>
+    </div>
+    <div class="bw-cart-body" id="bwCartItems">
+      <p class="bw-cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="bw-cart-footer">
+      <div class="bw-cart-total">
+        <span>Total</span>
+        <strong id="bwCartTotal">Kes. 0</strong>
+      </div>
+      <button class="bw-whatsapp-btn" onclick="initiateCheckout()" id="waBtn">
+        📱 Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SHOE DETAIL DASHBOARD
+═══════════════════════════════════════════ -->
+<div class="sd-overlay" id="shoeDashboard" role="dialog" aria-label="Product details">
+  <div class="sd-panel">
+    <button class="sd-close" onclick="document.getElementById('shoeDashboard').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="sd-image-col">
+      <img id="sd-img" src="" alt="Product image">
+    </div>
+    <div class="sd-info-col">
+      <p class="sd-tag">Bemilwis Boutique</p>
+      <h2 class="sd-name" id="sd-name"></h2>
+      <p class="sd-price" id="sd-price"></p>
+      <p class="sd-desc" id="sd-desc"></p>
+      <div class="sd-section" id="sd-colors-section">
+        <span class="sd-label">Color</span>
+        <div class="sd-colors" id="sd-colors"></div>
+      </div>
+      <div class="sd-section" id="sd-sizes-section">
+        <span class="sd-label">Size</span>
+        <div class="sd-sizes" id="sd-sizes"></div>
+      </div>
+      <div class="sd-section">
+        <span class="sd-label">Quantity</span>
+        <div class="sd-qty-row">
+          <button onclick="adjustQty(-1)" aria-label="Decrease quantity">−</button>
+          <input type="number" id="sd-qty" value="1" min="1" max="99" aria-label="Quantity">
+          <button onclick="adjustQty(1)" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+      <button class="sd-add-btn" id="sd-add">Add to Bag</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AUTH MODAL
+═══════════════════════════════════════════ -->
+<div class="bw-auth-overlay" id="bwAuthModal" role="dialog" aria-label="Sign in or register">
+  <div class="bw-auth-modal">
+    <div class="bw-auth-header">
+      <h2>Welcome to <em>Bemilwis</em></h2>
+      <div class="bw-auth-tabs" role="tablist">
+        <button class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')" role="tab">Sign In</button>
+        <button class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')" role="tab">Register</button>
+      </div>
+      <button class="bw-auth-close" onclick="closeAuthModal()" aria-label="Close">✕</button>
+    </div>
+
+    <!-- Login Tab -->
+    <div class="auth-tab-panel active" data-tab="login">
+      <div class="auth-error" id="loginError"></div>
+      <form class="bw-auth-form" id="bwLoginForm" novalidate>
+        <fieldset class="bw-fieldset">
+          <legend>Your Credentials</legend>
+          <div class="inputContainer">
+            <input type="email" name="email" placeholder=" " required autocomplete="email">
+            <label>Email address</label>
+            <span class="underline"></span>
+          </div>
+          <div class="inputContainer">
+            <input type="password" name="password" placeholder=" " required autocomplete="current-password">
+            <label>Password</label>
+            <span class="underline"></span>
+          </div>
+        </fieldset>
+        <button type="submit" class="bw-auth-submit">Sign In</button>
+      </form>
+      <p class="bw-auth-switch">No account? <span onclick="switchAuthTab('register')">Register free →</span></p>
+    </div>
+
+    <!-- Register Tab -->
+    <div class="auth-tab-panel" data-tab="register">
+      <div class="auth-error" id="modalRegError"></div>
+      <form class="bw-auth-form" id="bwModalRegForm" novalidate>
+        <fieldset class="bw-fieldset">
+          <legend>Your Details</legend>
+          <div class="inputContainer">
+            <input type="text" name="name" placeholder=" " required minlength="2" autocomplete="name">
+            <label>Full name</label>
+            <span class="underline"></span>
+          </div>
+          <div class="inputContainer">
+            <input type="email" name="email" placeholder=" " required autocomplete="email">
+            <label>Email address</label>
+            <span class="underline"></span>
+          </div>
+          <div class="inputContainer">
+            <input type="password" name="password" placeholder=" " required minlength="8" autocomplete="new-password" oninput="checkPwStrength(this.value,'modalPwFill','modalPwText')">
+            <label>Password (min. 8 chars)</label>
+            <span class="underline"></span>
+          </div>
+          <div class="pw-strength-bar"><div class="pw-strength-fill" id="modalPwFill"></div></div>
+          <p class="pw-strength-text" id="modalPwText">At least 8 characters</p>
+        </fieldset>
+        <button type="submit" class="bw-auth-submit">Create Account</button>
+      </form>
+      <p class="bw-auth-switch">Already a member? <span onclick="switchAuthTab('login')">Sign in →</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MEMBER DASHBOARD
+═══════════════════════════════════════════ -->
+<div class="bw-dash-overlay" id="bwDashboard" role="dialog" aria-label="Member dashboard">
+  <div class="bw-dash-panel">
+    <button class="bw-dash-close" onclick="closeDashboard()" aria-label="Close dashboard">✕</button>
+    <div class="bw-dash-header">
+      <div class="bw-dash-avatar">👤</div>
+      <h2 id="bw-dash-name">Member</h2>
+      <p id="bw-dash-email"></p>
+    </div>
+    <div class="bw-dash-body">
+      <div class="bw-dash-section">
+        <h4>Account Details</h4>
+        <table class="bw-dash-table">
+          <tr><td>Member Since</td><td id="bw-dash-joined">—</td></tr>
+          <tr><td>Total Orders</td><td id="bw-dash-order-count">0</td></tr>
+          <tr><td>Total Spent</td><td id="bw-dash-spent">Kes. 0</td></tr>
+        </table>
+      </div>
+      <div class="bw-dash-section">
+        <h4>Order History</h4>
+        <div id="bw-dash-orders"><p class="bw-dash-empty">No orders yet. Go explore the boutique! 👠</p></div>
+      </div>
+      <div class="bw-dash-section">
+        <h4>Recommended For You</h4>
+        <div class="bw-dash-recs" id="bw-dash-recs"></div>
+      </div>
+      <button class="bw-dash-logout" onclick="Auth.logout(); closeDashboard(); showToast('Signed out. See you soon! 👋')">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Trend product data for quick access
+const trendProducts = [
+  {id:'t0',name:'Open Chunky Blocks',price:2705,img:'blockSide.png',sizes:['36','37','38','39','40'],colors:[{hex:'#c8a882',name:'Nude'},{hex:'#1a1a1a',name:'Black'}]},
+  {id:'t1',name:'Closed Chunky Blocks',price:2499,img:'closedSide.png',sizes:['36','37','38','39','40'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#8b4513',name:'Brown'}]},
+  {id:'t2',name:'Slide Sandals',price:1099,img:'openFlatsSide.png',sizes:['36','37','38','39','40','41'],colors:[{hex:'#fff5e0',name:'Beige'},{hex:'#1a1a1a',name:'Black'}]},
+  {id:'t3',name:'Closed Flats',price:1800,img:'closedFlatsSide.png',sizes:['36','37','38','39','40'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#c8a882',name:'Nude'}]},
+  {id:'t4',name:'Lady Loafers',price:1995,img:'loafersSide.png',sizes:['36','37','38','39','40','41'],colors:[{hex:'#2c1810',name:'Dark Brown'},{hex:'#1a1a1a',name:'Black'}]},
+  {id:'t5',name:'Unisex Clogs',price:2195,img:'clogsSide.png',sizes:['36','37','38','39','40','41','42'],colors:[{hex:'#d2b48c',name:'Tan'},{hex:'#1a1a1a',name:'Black'}]},
+  {id:'t6',name:'Girls Combat Boots',price:3099,img:'bootsSide.png',sizes:['36','37','38','39','40'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#5c3d2e',name:'Brown'}]},
+  {id:'t7',name:'Boots 4 Men',price:3899,img:'menSide.png',sizes:['40','41','42','43','44','45'],colors:[{hex:'#1a1a1a',name:'Black'},{hex:'#8b4513',name:'Brown'}]},
+];
+
+function quickAdd(idx) {
+  const p = trendProducts[idx];
+  Cart.add({ id: p.id, name: p.name, price: p.price, img: p.img });
+}
+function smoothTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+function handleNewsletter(e) {
+  e.preventDefault();
+  showToast('Subscribed! Welcome to the Bemilwis family 💌', 'success');
+  e.target.reset();
+}
+function adjustQty(delta) {
+  const el = document.getElementById('sd-qty');
+  el.value = Math.max(1, (parseInt(el.value) || 1) + delta);
+}
+
+// Password strength checker
+function checkPwStrength(pw, fillId = 'pwFill', textId = 'pwText') {
+  const fill = document.getElementById(fillId);
+  const txt  = document.getElementById(textId);
+  if (!fill) return;
+  let score = 0;
+  if (pw.length >= 8) score++;
+  if (/[A-Z]/.test(pw)) score++;
+  if (/[0-9]/.test(pw)) score++;
+  if (/[^A-Za-z0-9]/.test(pw)) score++;
+  const classes = ['', 'weak', 'medium', 'strong'];
+  const labels  = ['', 'Weak', 'Moderate', 'Strong 💪'];
+  fill.className = 'pw-strength-fill ' + (classes[score] || 'weak');
+  txt.textContent = pw.length === 0 ? 'At least 8 characters' : (labels[score] || 'Weak');
+}
+
+// Homepage register form
+document.getElementById('bwRegisterForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const err = document.getElementById('regError');
+  const firstName = this.querySelector('[name=firstName]').value.trim();
+  const lastName  = this.querySelector('[name=lastName]').value.trim();
+  const email     = this.querySelector('[name=email]').value.trim();
+  const pw        = this.querySelector('[name=password]').value;
+  const cpw       = this.querySelector('[name=confirmPassword]').value;
+  if (pw !== cpw) {
+    err.textContent = 'Passwords do not match.'; err.classList.add('show'); return;
+  }
+  const res = Auth.register(`${firstName} ${lastName}`, email, pw);
+  if (!res.ok) { err.textContent = res.msg; err.classList.add('show'); return; }
+  err.classList.remove('show');
+  this.reset();
+  updateAuthUI();
+  showToast(`Welcome to Bemilwis, ${firstName}! 👠`, 'success');
+});
+</script>
 <script src="bw-app.js"></script>
 </body>
 </html>
